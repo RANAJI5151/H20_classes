@@ -1,0 +1,26 @@
+version = 3
+
+[[build.environment]]
+NODE_VERSION = "20.19.0"
+
+[build]
+command = "npm run build"
+watch_paths = ["client/**", "shared/**", "script/**"]
+
+[[builds]]
+src = "client/index.html"
+use = "@cloudflare/pages-plugin-static-html"
+
+[env.production]
+routes = [
+  { pattern = "api.example.com/api/*", zone_name = "example.com" }
+]
+
+[build.upload]
+dir = "dist/public"
+
+# For Cloudflare D1 database binding
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "h20-classes"
+# database_id = ""
