@@ -1,6 +1,0 @@
-/* Global redirect rules for Cloudflare Pages */
-/* Redirect API calls to origin or worker */
-/api/* https://api.example.com/api/:splat 200!
-
-/* Redirect all other routes to index.html for SPA routing */
-/* /*    /index.html   200
